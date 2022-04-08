@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:ibilling/cubit/contracts/cubit_view.dart';
 import 'package:ibilling/cubit/history/cubit_hisview.dart';
 import 'package:ibilling/cubit/new/cubit_newview.dart';
@@ -34,41 +35,56 @@ class _ContractsPaageState extends State<BottomPage> {
     return Scaffold(
       body:  _pages.elementAt(selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
-        items: const [
+        items: [
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.list_alt,
-            ),
+            icon: Container(
+          width: 18,
+          height: 20,
+          child: selectedIndex == 0 ? SvgPicture.asset('assets/icons/contrac_light.svg') : SvgPicture.asset('assets/icons/contrac_dark.svg')
+        ),
             label: "Contracts",
+          
           ),
+        
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.access_time,
-            ),
+            icon: Container(
+          width: 18,
+          height: 20,
+          child: selectedIndex == true  ? Image.asset("assets/icons/history_light.png") : Image.asset("assets/icons/history_dark.png")
+        ),
             label: "History",
           ),
           
            BottomNavigationBarItem(
-            icon: Icon(
-              Icons.add_box_outlined,
-            ),
+            icon: Container(
+          width: 18,
+          height: 20,
+          child: selectedIndex == 2? Image.asset("assets/icons/new_light.png") : Image.asset("assets/icons/new_dark.png")
+        ),
             label: "New",
           ),
            BottomNavigationBarItem(
-            icon: Icon(
-              Icons.square,
-            ),
+            icon: Container(
+          width: 18,
+          height: 20,
+          child: selectedIndex == 3 ? Image.asset("assets/icons/saved_light.png") : Image.asset("assets/icons/saved_dark.png")
+        ),
             label: "Saved",
           ),
            BottomNavigationBarItem(
-            icon: Icon(
-              Icons.person_outline
-            ),
+            icon: Container(
+          width: 18,
+          height: 20,
+          child: selectedIndex == 4 ? Image.asset("assets/icons/profile_light.png") : Image.asset("assets/icons/profile_dark.png")
+        ),
             label: "Profile",
           ),
           
         ],
+        // selectedItemColor: Colors.white,
+        // unselectedItemColor: Colors.white,
         currentIndex: selectedIndex,
+        fixedColor: Colors.white,
         onTap: _onItemTapped,
 
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class ContractsPage extends StatelessWidget {
   const ContractsPage({Key? key}) : super(key: key);
 
@@ -9,7 +10,13 @@ class ContractsPage extends StatelessWidget {
         body: Column(
       children: [
         Expanded(
-          child: Container(),
+          child: Row(
+            children: [
+              CircleAvatar(),
+              Text("Contracts"),
+              
+            ],
+          ),
         ),
         Expanded(
           child: Container(),
