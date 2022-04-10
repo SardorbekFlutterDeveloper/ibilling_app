@@ -1,22 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:ibilling/cubit/contracts/cubit_view.dart';
-import 'package:ibilling/cubit/history/cubit_hisview.dart';
-import 'package:ibilling/cubit/new/cubit_newview.dart';
-import 'package:ibilling/cubit/profile/cubit_profiview.dart';
-import 'package:ibilling/cubit/saved/cubit_savview.dart';
+import 'package:ibilling/core/constants/constants.dart';
+import 'package:ibilling/Widgets/size_config.dart';
+
+
+import 'package:ibilling/screens/contracts.dart.dart';
+import 'package:ibilling/screens/cubit_hisview.dart';
+import 'package:ibilling/screens/cubit_newview.dart';
+import 'package:ibilling/screens/cubit_profstate.dart';
+import 'package:ibilling/screens/cubit_savview.dart';
+
+
 
 class BottomPage extends StatefulWidget {
   BottomPage({Key? key}) : super(key: key);
- 
+
   @override
   State<BottomPage> createState() => _ContractsPaageState();
 }
 
 class _ContractsPaageState extends State<BottomPage> {
   int selectedIndex = 0;
-   static const List _pages = [
-    ContractsPage(),
+  static  List _pages = [
+   ContractsPage(),
     HistoryPage(),
     NewPage(),
     SavedPage(),
@@ -29,64 +35,101 @@ class _ContractsPaageState extends State<BottomPage> {
     });
   }
 
-
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
-      body:  _pages.elementAt(selectedIndex),
+      body: _pages.elementAt(selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
+            backgroundColor: Contsants.bottomnavbarcolor,
             icon: Container(
-          width: 18,
-          height: 20,
-          child: selectedIndex == 0 ? SvgPicture.asset('assets/icons/contrac_light.svg') : SvgPicture.asset('assets/icons/contrac_dark.svg')
-        ),
+              width: getWidth(18),
+              height: getHeight(20),
+              child: selectedIndex == 0
+                  ? SvgPicture.asset(
+                      "assets/icons/bottom/contrac_light.svg",
+                      color: Colors.white,
+                    )
+                  : SvgPicture.asset("assets/icons/bottom/contrac_dark.svg"),
+            ),
             label: "Contracts",
-          
           ),
-        
           BottomNavigationBarItem(
+            backgroundColor: Contsants.bottomnavbarcolor,
             icon: Container(
-          width: 18,
-          height: 20,
-          child: selectedIndex == true  ? Image.asset("assets/icons/history_light.png") : Image.asset("assets/icons/history_dark.png")
-        ),
+              width: getWidth(18),
+              height: getHeight(20),
+              child: selectedIndex == 1
+                  ? SvgPicture.asset(
+                      "assets/icons/bottom/history_light.svg",
+                      color: Colors.white,
+                    )
+                  : SvgPicture.asset(
+                      "assets/icons/bottom/history_dark.svg",
+                      color: Colors.white,
+                    ),
+            ),
             label: "History",
           ),
-          
-           BottomNavigationBarItem(
+          BottomNavigationBarItem(
+            backgroundColor: Contsants.bottomnavbarcolor,
             icon: Container(
-          width: 18,
-          height: 20,
-          child: selectedIndex == 2? Image.asset("assets/icons/new_light.png") : Image.asset("assets/icons/new_dark.png")
-        ),
+              width: getWidth(18),
+              height: getHeight(20),
+              child: selectedIndex == 2
+                  ? SvgPicture.asset(
+                      "assets/icons/bottom/new_light.svg",
+                      color: Colors.white,
+                    )
+                  : SvgPicture.asset(
+                      "assets/icons/bottom/new_dark.svg",
+                      color: Colors.white,
+                    ),
+            ),
             label: "New",
           ),
-           BottomNavigationBarItem(
+          BottomNavigationBarItem(
+            backgroundColor: Contsants.bottomnavbarcolor,
             icon: Container(
-          width: 18,
-          height: 20,
-          child: selectedIndex == 3 ? Image.asset("assets/icons/saved_light.png") : Image.asset("assets/icons/saved_dark.png")
-        ),
+              width: getWidth(18),
+              height: getHeight(20),
+              child: selectedIndex == 3
+                  ? SvgPicture.asset(
+                      "assets/icons/bottom/saved_light.svg",
+                      color: Colors.white,
+                    )
+                  : SvgPicture.asset(
+                      "assets/icons/bottom/saved_dark.svg",
+                      color: Colors.white,
+                    ),
+            ),
             label: "Saved",
           ),
-           BottomNavigationBarItem(
+          BottomNavigationBarItem(
+            backgroundColor: Contsants.bottomnavbarcolor,
             icon: Container(
-          width: 18,
-          height: 20,
-          child: selectedIndex == 4 ? Image.asset("assets/icons/profile_light.png") : Image.asset("assets/icons/profile_dark.png")
-        ),
+              width: getWidth(18),
+              height: getHeight(20),
+              child: selectedIndex == 4
+                  ? SvgPicture.asset(
+                      "assets/icons/bottom/profile_light.svg",
+                      color: Colors.white,
+                    )
+                  : SvgPicture.asset(
+                      "assets/icons/bottom/profile_dark.svg",
+                      color: Colors.white,
+                    ),
+            ),
             label: "Profile",
           ),
-          
         ],
-        // selectedItemColor: Colors.white,
-        // unselectedItemColor: Colors.white,
+        type: BottomNavigationBarType.fixed, 
         currentIndex: selectedIndex,
-        fixedColor: Colors.white,
+        selectedItemColor: Colors.white,
+        selectedLabelStyle: TextStyle(color: Colors.white),
         onTap: _onItemTapped,
-
       ),
     );
   }

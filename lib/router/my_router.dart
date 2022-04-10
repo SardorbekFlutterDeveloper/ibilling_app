@@ -1,10 +1,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:ibilling/bottom.dart';
-import 'package:ibilling/cubit/contracts/cubit_view.dart';
-import 'package:ibilling/cubit/history/cubit_hisview.dart';
-import 'package:ibilling/cubit/new/cubit_newview.dart';
-import 'package:ibilling/cubit/profile/cubit_profiview.dart';
+import 'package:ibilling/screens/contracts.dart.dart';
+import 'package:ibilling/screens/cubit_hisview.dart';
+import 'package:ibilling/screens/cubit_newview.dart';
+import 'package:ibilling/screens/cubit_profstate.dart';
+import 'package:ibilling/screens/cubit_savview.dart';
 
 class MyRouter {
   Route? ongenerateRoute(RouteSettings settings) {
@@ -28,7 +29,7 @@ class MyRouter {
 
         case "/saved":
         return MaterialPageRoute(
-          builder: (context) => const NewPage(),
+          builder: (context) => const SavedPage(),
         );
 
         case "/Profile":
