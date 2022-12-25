@@ -1,25 +1,68 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ibilling/core/init/lang/lang_manager.dart';
+import 'package:ibilling/core/init/notifier/cubit_list.dart';
 import 'package:ibilling/router/my_router.dart';
+import 'dart:io';
 
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ibilling/core/constants/navigation/navigation_const.dart';
 
-void main() {
-  runApp( MyApp());
+import 'package:ibilling/core/init/theme/dark_theme.dart';
+import 'package:ibilling/core/constants/texts/text_const.dart';
+import 'package:ibilling/router/router/router.dart';
+
+void main() async {
+  await _init();
+  runApp(
+    MultiBlocProvider(
+      providers: [...ApplicationCubit.instance.depentItems],
+      child: EasyLocalization(
+        saveLocale: true,
+        fallbackLocale: LanguageManager.instance.enLocale,
+        startLocale: _deviceLangChek(),
+        supportedLocales: LanguageManager.instance.supportedLocales,
+        path: LanguageManager.instance.LANG_ASSET_PATH,
+        child: MyApp(),
+      ),
+    ),
+  );
+}
+
+Future _init() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+}
+
+Locale _deviceLangChek() {
+  return Platform.localeName.contains("uz")
+      ? LanguageManager.instance.uzLocale
+      : Platform.localeName.contains("ru")
+          ? LanguageManager.instance.ruLocale
+          : LanguageManager.instance.enLocale;
 }
 
 class MyApp extends StatelessWidget {
-   MyApp({Key? key}) : super(key: key);
- MyRouter _forRoute = MyRouter();
+  MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-
-     theme: ThemeData.dark(),
-    
-      initialRoute: "/Bottom",
-      onGenerateRoute: _forRoute.ongenerateRoute,
-    );
+    return ScreenUtilInit(
+        designSize: const Size(375, 815),
+        builder: (context, child) {
+          return MaterialApp(
+            localizationsDelegates: context.localizationDelegates,
+            supportedLocales: context.supportedLocales,
+            locale: context.locale,
+            title: TextConst.APP_TITLE,
+            debugShowCheckedModeBanner: false,
+            themeMode: ThemeMode.dark,
+            navigatorKey: NavigationService.instance.navigatorKey,
+            darkTheme: AppThemeDark.instance.darkTheme,
+            initialRoute: NavigationConst.Splash_Page,
+            onGenerateRoute: Routes.instance.ongenerateRoute,
+          );
+        });
   }
 }

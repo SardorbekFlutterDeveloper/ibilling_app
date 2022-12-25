@@ -3,14 +3,11 @@ import 'package:flutter_svg/svg.dart';
 import 'package:ibilling/core/constants/constants.dart';
 import 'package:ibilling/Widgets/size_config.dart';
 
-
-import 'package:ibilling/screens/contracts.dart.dart';
-import 'package:ibilling/screens/cubit_hisview.dart';
-import 'package:ibilling/screens/cubit_newview.dart';
-import 'package:ibilling/screens/cubit_profstate.dart';
-import 'package:ibilling/screens/cubit_savview.dart';
-
-
+import 'package:ibilling/views/contracts.dart.dart';
+import 'package:ibilling/views/cubit_hisview.dart';
+import 'package:ibilling/views/cubit_newview.dart';
+import 'package:ibilling/views/cubit_profstate.dart';
+import 'package:ibilling/views/cubit_savview.dart';
 
 class BottomPage extends StatefulWidget {
   BottomPage({Key? key}) : super(key: key);
@@ -21,8 +18,8 @@ class BottomPage extends StatefulWidget {
 
 class _ContractsPaageState extends State<BottomPage> {
   int selectedIndex = 0;
-  static  List _pages = [
-   ContractsPage(),
+  static List _pages = [
+    ContractsPage(),
     HistoryPage(),
     NewPage(),
     SavedPage(),
@@ -125,7 +122,7 @@ class _ContractsPaageState extends State<BottomPage> {
             label: "Profile",
           ),
         ],
-        type: BottomNavigationBarType.fixed, 
+        type: BottomNavigationBarType.fixed,
         currentIndex: selectedIndex,
         selectedItemColor: Colors.white,
         selectedLabelStyle: TextStyle(color: Colors.white),
