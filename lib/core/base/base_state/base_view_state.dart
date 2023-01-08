@@ -1,7 +1,4 @@
-import 'dart:async';
-import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:flutter/material.dart';
-import 'package:ibilling/core/base/base_view/base_view.dart';
+import 'package:ibilling/core/files_path.dart';
 
 class BaseViewState extends State<BaseView> {
   StreamSubscription<ConnectivityResult>? subscription;

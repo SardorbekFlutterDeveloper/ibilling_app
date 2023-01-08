@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:ibilling/core/files_path.dart';
 
-class circleAvatar {
+class CirleAvatar {
   static CircleAvatar circleAvatarim(double radiuss) => CircleAvatar(
         radius: radiuss,
         child: Container(

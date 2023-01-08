@@ -1,4 +1,4 @@
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ibilling/core/files_path.dart';
 
 class SizeConst {
   static final SizeConst _instance = SizeConst._init();

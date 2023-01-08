@@ -1,6 +1,4 @@
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import '../../core/files_path.dart';
 
 class Signup extends StatefulWidget {
   const Signup({Key? key}) : super(key: key);

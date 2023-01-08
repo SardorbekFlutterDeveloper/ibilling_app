@@ -1,13 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:ibilling/core/constants/constants.dart';
-import 'package:ibilling/Widgets/size_config.dart';
-
-import 'package:ibilling/views/contracts.dart.dart';
-import 'package:ibilling/views/cubit_hisview.dart';
-import 'package:ibilling/views/cubit_newview.dart';
-import 'package:ibilling/views/cubit_profstate.dart';
-import 'package:ibilling/views/cubit_savview.dart';
+import 'core/files_path.dart';
 
 class BottomPage extends StatefulWidget {
   BottomPage({Key? key}) : super(key: key);

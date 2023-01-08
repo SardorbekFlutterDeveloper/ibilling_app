@@ -1,12 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:ibilling/bottom.dart';
-import 'package:ibilling/core/constants/navigation/navigation_const.dart';
-import 'package:ibilling/views/contracts.dart.dart';
-import 'package:ibilling/views/cubit_hisview.dart';
-import 'package:ibilling/views/cubit_newview.dart';
-import 'package:ibilling/views/cubit_profstate.dart';
-import 'package:ibilling/views/cubit_savview.dart';
-import 'package:ibilling/views/splash_pages/splash_page.dart';
+import 'package:ibilling/core/files_path.dart';
 
 class Routes {
   static final Routes _instance = Routes._init();

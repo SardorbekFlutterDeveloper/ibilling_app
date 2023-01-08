@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:ibilling/core/constants/colors/color_const.dart';
-
-import 'package:ibilling/core/constants/sizes/size_const.dart';
+import 'package:ibilling/core/files_path.dart';
 
 class FontStyleConst {
   static final FontStyleConst _instance = FontStyleConst._init();

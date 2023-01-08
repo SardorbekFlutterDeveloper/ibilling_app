@@ -1,10 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/widgets.dart';
-import 'package:ibilling/core/constants/colors/color_const.dart';
-import 'package:ibilling/core/constants/sizes/size_const.dart';
+import 'package:ibilling/core/files_path.dart';
 
 class RedButtonW extends StatelessWidget {
   final String text;

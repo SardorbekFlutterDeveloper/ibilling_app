@@ -1,17 +1,15 @@
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:ibilling/core/files_path.dart';
 
-class SigIn extends StatefulWidget {
-  const SigIn({Key? key}) : super(key: key);
+class SingleView extends StatelessWidget {
+  const SingleView({Key? key}) : super(key: key);
 
-  @override
-  State<SigIn> createState() => _SignupState();
-}
-
-class _SignupState extends State<SigIn> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(),
+    );
   }
 }

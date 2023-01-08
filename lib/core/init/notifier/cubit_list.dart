@@ -1,5 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ibilling/views/bottom_nav_bar/bloc/bottom_nav_bar_cubit.dart';
+import 'package:ibilling/views/intro/intro_cubit.dart';
+
+import '../../files_path.dart';
 
 class ApplicationCubit {
   static final ApplicationCubit _instance = ApplicationCubit._init();
@@ -7,8 +9,12 @@ class ApplicationCubit {
   ApplicationCubit._init();
 
   List<BlocProvider> depentItems = [
-    BlocProvider(
+    BlocProvider<BottomNavBarCubit>(
       create: (context) => BottomNavBarCubit(),
-    )
+    ),
+    BlocProvider<IntroCubit>(
+      create: (contex) => IntroCubit(),
+    ),
+    BlocProvider(create: (context) => SignInCubit)
   ];
 }

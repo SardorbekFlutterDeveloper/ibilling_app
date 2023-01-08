@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:ibilling/core/constants/sizes/size_const.dart';
+import 'package:ibilling/core/files_path.dart';
 
 class PaddingMarginConst {
   static final PaddingMarginConst _instance = PaddingMarginConst._init();

@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:ibilling/core/constants/colors/color_const.dart';
-import 'package:ibilling/core/constants/sizes/size_const.dart';
-import 'package:ibilling/core/constants/texts/font_style_const.dart';
+import 'package:ibilling/core/files_path.dart';
 
 class RedButtonWhiteTextW extends StatelessWidget {
   final String text;

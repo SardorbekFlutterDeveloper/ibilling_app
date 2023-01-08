@@ -1,12 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:ibilling/Widgets/circle_avatar.dart';
-import 'package:ibilling/core/constants/constants.dart';
-import 'package:ibilling/Widgets/size_config.dart';
-import 'package:date_picker_timeline/date_picker_timeline.dart';
+import 'package:ibilling/core/files_path.dart';
 
 class ContractsPage extends StatefulWidget {
   ContractsPage({Key? key}) : super(key: key);

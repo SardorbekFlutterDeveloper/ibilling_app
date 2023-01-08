@@ -1,17 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ibilling/core/init/lang/lang_manager.dart';
-import 'package:ibilling/core/init/notifier/cubit_list.dart';
-import 'package:ibilling/router/my_router.dart';
-import 'dart:io';
 
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ibilling/core/constants/navigation/navigation_const.dart';
-
-import 'package:ibilling/core/init/theme/dark_theme.dart';
-import 'package:ibilling/core/constants/texts/text_const.dart';
-import 'package:ibilling/router/router/router.dart';
+import 'core/files_path.dart';
+import 'core/init/notifier/cubit_list.dart';
 
 void main() async {
   await _init();

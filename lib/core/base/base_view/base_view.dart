@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:ibilling/core/base/base_state/base_view_state.dart';
+import '../../files_path.dart';
 
 class BaseView<T> extends StatefulWidget {
   final T viewModal;

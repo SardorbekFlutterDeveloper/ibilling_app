@@ -1,6 +1,6 @@
 class NavigationConst {
   static const String Splash_Page = "/splash";
-  static const String LoginPage = "/login";
+  static const String INTRO_VIEW = "/intro";
   static const String BottomNavBar = "/bottom_navbar";
   static const String SinglePage = "/single";
   static const String NewContractPage = "/new_contract";
