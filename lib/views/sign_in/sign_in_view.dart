@@ -1,6 +1,5 @@
 import 'package:ibilling/views/sign_in/sign_in_cubit.dart';
 import 'package:ibilling/views/sign_in/sign_in_state.dart';
-import 'package:ibilling/widgets/sign_text_field_widget.dart';
 
 import '../../core/files_path.dart';
 
@@ -42,10 +41,65 @@ class _SignupState extends State<SigIn> {
                   ),
                 ),
                 SizedBox(height: 32.h),
+                //! Email
                 SignTextFieldW(
-                    controller: context.signInCTStream.emailController,
-                    isLastField: isLastField,
-                    onPressed: onPressed)
+                  controller: context.signInCTStream.emailController,
+                  isLastField: false,
+                  title: "Email",
+                  onPressed: () {
+                    context.signInCT.continueButtonPressable();
+                  },
+                ),
+                SizedBox(
+                  height: SizeConst.instance.hMedium,
+                ),
+                //! Password
+                SignTextFieldW(
+                  controller: context.signInCTStream.passwordController,
+                  isLastField: true,
+                  title: "Password",
+                  isObsecureText: context.signInCTStream.isObsecureText,
+                  obsecureTextPressed: () =>
+                      context.signInCT.changeIsObsecure(),
+                  onPressed: () {
+                    context.signInCT.continueButtonPressable();
+                  },
+                ),
+                SizedBox(
+                  height: 28.h,
+                ),
+                IntroButton(
+                  text: "Continue",
+                  voidCallback: context.signInCTStream.continueButton
+                      ? () => NavigationService.instance.pushNamedRemoveUntil(
+                            routeName: NavigationConst.Bottom_Nav_Bar_View,
+                          )
+                      : null,
+                ),
+                const Spacer(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Do not have an account?",
+                      style: FontStyleConst.instance.introBottom1,
+                    ),
+                    InkWell(
+                      child: Text(
+                        "Create it!",
+                        style: FontStyleConst.instance.introBottom2,
+                      ),
+                      onTap: () {
+                        NavigationService.instance.pushNamed(
+                          routeName: NavigationConst.Signup,
+                        );
+                      },
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 40.h,
+                ),
               ],
             ),
           ),

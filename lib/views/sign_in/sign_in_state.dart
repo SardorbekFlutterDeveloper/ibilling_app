@@ -10,13 +10,13 @@ class SignInLoading extends SignInState {
   const SignInLoading();
 }
 
-class SignInComplate extends SignInState {
-  const SignInComplate();
+class SignInComplete extends SignInState {
+  const SignInComplete();
 }
 
-class ChangeObsecuretext extends SignInState {
+class ChangeObsecureText extends SignInState {
   final bool isObsecureText;
-  ChangeObsecuretext(this.isObsecureText);
+  ChangeObsecureText(this.isObsecureText);
 }
 
 class ContinueButton extends SignInState {

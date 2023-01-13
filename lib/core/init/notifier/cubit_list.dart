@@ -1,5 +1,6 @@
 import 'package:ibilling/views/bottom_nav_bar/bloc/bottom_nav_bar_cubit.dart';
-import 'package:ibilling/views/intro/intro_cubit.dart';
+
+import 'package:ibilling/views/sign_in/sign_in_cubit.dart';
 
 import '../../files_path.dart';
 
@@ -15,6 +16,11 @@ class ApplicationCubit {
     BlocProvider<IntroCubit>(
       create: (contex) => IntroCubit(),
     ),
-    BlocProvider(create: (context) => SignInCubit)
+    BlocProvider(
+      create: (context) => SignInCubit(),
+    ),
+    BlocProvider<SignUpCubit>(
+      create: (BuildContext context) => SignUpCubit(),
+    ),
   ];
 }

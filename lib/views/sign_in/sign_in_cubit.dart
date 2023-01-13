@@ -1,9 +1,8 @@
+import 'package:ibilling/core/files_path.dart';
 import 'package:ibilling/views/sign_in/sign_in_state.dart';
 
-import '../../core/files_path.dart';
-
 class SignInCubit extends Cubit<SignInState> {
-  SignInCubit(SignInState initialState) : super(initialState);
+  SignInCubit() : super(const SignInInitial());
 
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -13,7 +12,7 @@ class SignInCubit extends Cubit<SignInState> {
 
   void changeIsObsecure() {
     isObsecureText = !isObsecureText;
-    emit(ChangeObsecuretext(isObsecureText));
+    emit(ChangeObsecureText(isObsecureText));
   }
 
   void continueButtonPressable() {
